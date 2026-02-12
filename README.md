@@ -82,12 +82,12 @@ Nas versões mais recentes do Kafka (3.x+), é recomendado usar o modo KRaft, qu
 
 2.  Formate os diretórios de log (substitua `<UUID>` pelo código copiado):
     ```cmd
-    .\bin\windows\kafka-storage.bat format -t <UUID> -c .\config\kraft\server.properties
+    .\bin\windows\kafka-storage.bat format --standalone -t <UUID> -c .\config\server.properties
     ```
 
 3.  Inicie o servidor Kafka:
     ```cmd
-    .\bin\windows\kafka-server-start.bat .\config\kraft\server.properties
+    .\bin\windows\kafka-server-start.bat .\config\server.properties
     ```
 
 ### 2. Configurar o SMTP (Mailtrap)
