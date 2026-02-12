@@ -90,21 +90,6 @@ Nas versões mais recentes do Kafka (3.x+), é recomendado usar o modo KRaft, qu
     .\bin\windows\kafka-server-start.bat .\config\kraft\server.properties
     ```
 
-**No Linux/Mac:**
-
-1.  Gere o UUID:
-    ```bash
-    bin/kafka-storage.sh random-uuid
-    ```
-2.  Formate os logs:
-    ```bash
-    bin/kafka-storage.sh format -t <UUID> -c config/kraft/server.properties
-    ```
-3.  Inicie o Kafka:
-    ```bash
-    bin/kafka-server-start.sh config/kraft/server.properties
-    ```
-
 ### 2. Configurar o SMTP (Mailtrap)
 No arquivo `src/main/resources/application.properties`, configure as credenciais do seu servidor SMTP. O projeto já vem pré-configurado para usar o Mailtrap (ambiente de teste):
 
