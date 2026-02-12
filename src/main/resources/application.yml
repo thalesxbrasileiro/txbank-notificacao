@@ -10,7 +10,7 @@ spring:
       group-id: notificacao-service-v1
       auto-offset-reset: earliest
   mail:
-    host: smtp.gmail.com
+    host: sandbox.smtp.mailtrap.io
     port: 587
     username: ${EMAIL_USERNAME}
     password: ${EMAIL_PASSWORD}
