@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: txbank-notificacao
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notificacao-service-v1
+      auto-offset-reset: earliest
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 465
+    username: xxx
+    password: xxx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          starttls:
+            enable: false
+
+email:
+  destino: xxx
+
+# Para ver logs detalhados do consumidor
+# logging:
+#   level:
+#     org.springframework.kafka: DEBUG
+#     org.apache.kafka.clients.consumer: DEBUG
