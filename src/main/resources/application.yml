@@ -10,21 +10,21 @@ spring:
       group-id: notificacao-service-v1
       auto-offset-reset: earliest
   mail:
-    host: sandbox.smtp.mailtrap.io
-    port: 465
-    username: xxx
-    password: xxx
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
     properties:
       mail:
         smtp:
           auth: true
           ssl:
-            enable: true
-          starttls:
             enable: false
+          starttls:
+            enable: true
 
 email:
-  destino: xxx
+  destino: ${EMAIL_DESTINO}
 
 # Para ver logs detalhados do consumidor
 # logging:
