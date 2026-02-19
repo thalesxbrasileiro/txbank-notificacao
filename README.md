@@ -115,6 +115,33 @@ spring.mail.password=SUA_SENHA
     mvn spring-boot:run
     ```
 
+## 🐳 Rodando com Docker
+
+Você pode containerizar a aplicação para facilitar a execução e o deploy.
+
+### 1. Construir a Imagem
+
+Na raiz do projeto, execute:
+
+```bash
+docker build -t txbank-notificacao .
+```
+
+### 2. Executar o Container
+
+Para rodar o container, é necessário passar as variáveis de ambiente para o E-mail e configurar o acesso ao Kafka (se estiver rodando no host).
+
+```bash
+docker run -p 8081:8081 \
+  -e SPRING_KAFKA_BOOTSTRAP_SERVERS=host.docker.internal:9092 \
+  -e EMAIL_USERNAME=seu_usuario_mailtrap \
+  -e EMAIL_PASSWORD=sua_senha_mailtrap \
+  -e EMAIL_DESTINO=seu_email@teste.com \
+  txbank-notificacao
+```
+
+> **Nota:** O endereço `host.docker.internal` é usado para que o container consiga acessar o Kafka rodando na sua máquina local (Windows/Mac). Se estiver no Linux, use `--network="host"`.
+
 ## 📨 Eventos e Payloads
 
 ### Tópico: `conta-criada` (Exemplo)
